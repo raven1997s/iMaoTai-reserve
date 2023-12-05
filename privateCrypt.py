@@ -12,7 +12,7 @@ def get_aes_key():
     :return:
     """
     private_key = config.PRIVATE_AES_KEY  # 你的私钥
-    print(private_key)
+    print(private_key + "======")
     if private_key is None:
         logging.error("!!!!请配置config.py中PRIVATE_AES_KEY(AES的私钥)")
         raise ValueError
