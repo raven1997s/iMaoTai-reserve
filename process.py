@@ -10,6 +10,7 @@ from encrypt import Encrypt
 import requests
 import hashlib
 import logging
+import config
 
 AES_KEY = 'qbhajinldepmucsonaaaccgypwuvcjaa'
 AES_IV = '2018534749963515'
@@ -282,6 +283,7 @@ def select_geo(i: str):
         logging.error("!!!!请配置config.py中AMAP_KEY(高德地图的MapKey)")
         raise ValueError
     resp = requests.get(f"https://restapi.amap.com/v3/geocode/geo?key={config.AMAP_KEY}&output=json&address={i}")
+    print(resp.json())  # 打印返回的json
     geocodes: list = resp.json()['geocodes']
     return geocodes
 
