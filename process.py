@@ -328,6 +328,8 @@ def getUserEnergyAward(mobile: str):
     """
     领取耐力
     """
+    # 休眠3秒
+    time.sleep(3)
     cookies = {
         'MT-Device-ID-Wap': headers['MT-Device-ID'],
         'MT-Token-Wap': headers['MT-Token'],
