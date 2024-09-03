@@ -257,7 +257,7 @@ def send_msg(title, content):
 def send_ding_msg(title, content):
     
     # 钉钉机器人推送
-    url_dingtalk = 'https://oapi.dingtalk.com/robot/send?' + access_token={config.DING_TOKEN}
+    url_dingtalk = f'https://oapi.dingtalk.com/robot/send?access_token={config.DING_TOKEN}'
     
     headers = {'Content-Type': 'application/json'}
     data = {
