@@ -82,4 +82,4 @@ for section in configs.sections():
         logging.error(e)
 
 # 推送消息
-process.send_msg(s_title, s_content)
+process.send_ding_msg(s_title, s_content)

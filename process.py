@@ -254,6 +254,23 @@ def send_msg(title, content):
     logging.info(f'通知推送结果：{r.status_code, r.text}')
 
 
+def send_ding_msg(title, content):
+    
+    # 钉钉机器人推送
+    url_dingtalk = 'https://oapi.dingtalk.com/robot/send?' + access_token={config.DING_TOKEN}
+    
+    headers = {'Content-Type': 'application/json'}
+    data = {
+        "title": title,
+        "msgtype": "text",
+        "text": {
+            "content": content
+        }
+    }
+    
+    response = requests.post(url_dingtalk, headers=headers, data=json.dumps(data))
+    logging.info(f'钉钉推送结果：{response.status_code, response.text}')
+
 # 核心代码，执行预约
 def reservation(params: dict, mobile: str):
     params.pop('userId')
